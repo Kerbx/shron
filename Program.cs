@@ -82,11 +82,19 @@ namespace kurwa
             Console.ReadKey();
             */
 
+            /*
             Console.WriteLine("Введите двузначное число.");
             int num = int.Parse(Console.ReadLine());
             Console.WriteLine($"Десятки: {Math.Abs(num) / 10}; единицы: {Math.Abs(num) % 10};");
             Console.ReadKey();
+            */
 
+            /*
+            Console.WriteLine("Введите трехзначное число.");
+            int num = int.Parse(Console.ReadLine());
+            Console.WriteLine($"{num / 100}0{num % 10}");
+            Console.ReadKey();
+            */
         }
     }
 }
