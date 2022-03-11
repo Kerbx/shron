@@ -9,6 +9,7 @@ namespace kurwaconsole
 {
     class Program
     {
+        enum DayOfWeek { MON, TUE, WED, THU, FRI, SAT, SUN };
         static void Main(string[] args)
         {
 
@@ -393,7 +394,186 @@ namespace kurwaconsole
 
             Console.WriteLine($"Максимальное число {prev}, его порядковый номер {counter}");
             */
+
+            // Файл 5.
+
+            // Задание 1.
+            // Perimetr();
+
+            // Задание 2.
+            // Console.Write(Perimetr2());
+
+            // Задание 3.
+            // Distance();
+
+            // Задание 4.
+            // Console.Write(Distance2());
+
+            // Задание 5.
+            // ChangeDigits();
+
+            // Задание 6.
+            // BitwiseSum();
+
+            // Задание 7.
+            /*
+            int counterNeg = 0;
+            int counterPos = 0;
+
+            PosNegSeq(ref counterNeg, ref counterPos);
+            Console.WriteLine($"Количество отрицательных чисел: {counterNeg}, \nКоличество положительных чисел:{counterPos}");
+            Console.ReadKey();
+            */
+
+            // Файл 6.
+            // Задание 1.
+            // LrzeMain();
         }
+
+        static void Perimetr()
+        {
+            int a = int.Parse(Console.ReadLine());
+            int b = int.Parse(Console.ReadLine());
+            int c = int.Parse(Console.ReadLine());
+
+            Console.WriteLine($"Периметр равен {a} + {b} + {c} = {a + b + c}");
+            Console.ReadKey();
+        }
+
+        static int Perimetr2()
+        {
+            int a = int.Parse(Console.ReadLine());
+            int b = int.Parse(Console.ReadLine());
+            int c = int.Parse(Console.ReadLine());
+
+            int result = a + b + c;
+
+            return result;
+        }
+
+        static void Distance()
+        {
+            int x1 = int.Parse(Console.ReadLine());
+            int y1 = int.Parse(Console.ReadLine());
+            int x2 = int.Parse(Console.ReadLine());
+            int y2 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine($"Результат равен {Math.Sqrt((Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2)))}");
+            Console.ReadKey();
+        }
+
+        static double Distance2()
+        {
+            double x1 = double.Parse(Console.ReadLine());
+            double y1 = double.Parse(Console.ReadLine());
+            double x2 = double.Parse(Console.ReadLine());
+            double y2 = double.Parse(Console.ReadLine());
+
+            return Math.Sqrt((Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2)));
+        }
+
+        static void ChangeDigits()
+        {
+            int a = int.Parse(Console.ReadLine());
+            Console.WriteLine($"Результат равен {a % 10}{a / 10}");
+            Console.ReadKey();
+        }
+
+        static void BitwiseSum()
+        {
+            int a = int.Parse(Console.ReadLine());
+            int b = int.Parse(Console.ReadLine());
+
+            Console.WriteLine($"Результат равен {a / 10 + b / 10}{a % 10 + b % 10}");
+            Console.ReadKey();
+        }
+
+        static void PosNegSeq(ref int counterNeg, ref int counterPos)
+        {
+            var massive = new List<int>();
+            int a;
+            do
+            {
+                a = int.Parse(Console.ReadLine());
+                massive.Add(a);
+            } while (a != 0);
+            
+            foreach (int e in massive)
+            {
+                Console.WriteLine(e);
+                if(e > 0)
+                {
+                    counterPos++;
+                    Console.WriteLine(counterPos);
+                }
+                else if(e < 0)
+                {
+                    counterNeg++;
+                    Console.WriteLine(counterNeg);
+                }
+                else
+                {
+                    continue;
+                }
+            }
+
+        }
+
+        static void PrintDayOfWeek(DayOfWeek dow)
+        {
+            switch (dow)
+            {
+                case DayOfWeek.MON:
+                    Console.WriteLine("Monday");
+                    Console.ReadKey();
+                    break;
+                case DayOfWeek.TUE:
+                    Console.WriteLine("Tuesday");
+                    Console.ReadKey();
+                    break;
+                case DayOfWeek.WED:
+                    Console.WriteLine("It is wednesday my dudes");
+                    Console.ReadKey();
+                    break;
+                case DayOfWeek.THU:
+                    Console.WriteLine("Thursday");
+                    Console.ReadKey();
+                    break;
+                case DayOfWeek.FRI:
+                    Console.WriteLine("Friday");
+                    Console.ReadKey();
+                    break;
+                case DayOfWeek.SAT:
+                    Console.WriteLine("Saturday");
+                    Console.ReadKey();
+                    break;
+                case DayOfWeek.SUN:
+                    Console.WriteLine("Sunday");
+                    Console.ReadKey();
+                    break;
+                
+            }
+        }
+
+        static DayOfWeek ReadDayOfWeek()
+        {
+            int day;
+            day = int.Parse(Console.ReadLine());
+
+            if (day < 0 || day > 8)
+            {
+                throw new ArgumentOutOfRangeException("day", "day must be > 0 and <8; day=" + day.ToString());
+            }
+            return (DayOfWeek)day;
+        }
+
+        static void LrzeMain()
+        {
+            DayOfWeek dow = DayOfWeek.THU;
+
+            PrintDayOfWeek(dow);
+        }
+
     }
 }
 
